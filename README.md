@@ -126,3 +126,17 @@ Neede some changes on config var like the code of bellow
         }
     </script>
 ```
+## Add loaded and left MB for uploaded file
+Just chane some code on cofig variabble
+```bash
+ let config = {headers:{'content_type': 'multipart/form_data'},
+                onUploadProgress:function (progressEvent) {
+                   let upPercent = Math.round((progressEvent.loaded*100)/progressEvent.total);
+                    let uploadedMB = (progressEvent.loaded)/(1028*1028);
+                   let totalMB = (progressEvent.total)/(1028*1028);
+                   let DueMB = totalMB-uploadedMB;
+                    $('#Up-percent').html(uploadedMB.toFixed(2)+"MB/"+totalMB.toFixed(2)+"MB "+upPercent+"%");
+                }
+            };
+```
+
