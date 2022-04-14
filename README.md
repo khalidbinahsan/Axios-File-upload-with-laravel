@@ -139,4 +139,12 @@ Just chane some code on cofig variabble
                 }
             };
 ```
+## How to make a download request
+First Call DB From Controller
+```bash
+use Illuminate\Support\Facades\DB;
+```
+Then make this function
+```bash
+
 
