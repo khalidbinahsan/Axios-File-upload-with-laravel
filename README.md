@@ -154,7 +154,9 @@ function onSelectFileList() {
 ## Upload File on public directory
 If you want upload file on public directory write this function on Controller
 ```bash
-\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -171,6 +173,7 @@ class uploadController extends Controller
         }
     }
 }
+
 ```
 Then link public storage with this command
 ```bash
