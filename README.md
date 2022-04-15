@@ -151,6 +151,7 @@ function onSelectFileList() {
         return $result;
     }
 ```
+## Upload File on public directory
 If you want upload file on public directory write this function on Controller
 ```bash
 \Controllers;
