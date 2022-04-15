@@ -146,5 +146,10 @@ use Illuminate\Support\Facades\DB;
 ```
 Then make this function
 ```bash
+function onSelectFileList() {
+        $result = DB::table('photos')->get();
+        return $result;
+    }
+```
 
 
