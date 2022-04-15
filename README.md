@@ -151,5 +151,28 @@ function onSelectFileList() {
         return $result;
     }
 ```
+If you want upload file on public directory write this function on Controller
+```bash
+\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class uploadController extends Controller
+{
+    function onFileUp(Request $request) {
+        $path = $request->file('FileKey')->store('public');
+        $result = DB::table('photos')->insert(['file_path'=>$path]);
+        if ($result==true) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
+```
+Then link public storage with this command
+```bash
+php artisan storage:link
+```
 
